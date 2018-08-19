@@ -1,16 +1,27 @@
 .grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    width: 50%;
+    width: 30%;
     margin: 0 auto;
+    background-color: #d9e6f2;
 
 }
 .grid-item{
-    padding: 10px;
+    padding: 20px;
     text-align: center;
-    background-color: powderblue;
+    background-color: #d9e6f2;
+    font-family: verdana;
+    font-size: 16pt;
+    text-transform: uppercase;
 }
 
 p{
     text-align: center;
+    font-family: verdana;
+}
+
+h1{
+    text-align: center;
+    font-family: verdana;
+    color: lightslategray;
 }

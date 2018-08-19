@@ -6,62 +6,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-  leftHandNumber: string;
-  rightHandNumber: string;
-  areWeTypingTheFirstNumber: boolean;
+  input: string;
   answer: string;
 
   constructor() {
-    this.leftHandNumber = "";
-    this.rightHandNumber = "";
-    this.areWeTypingTheFirstNumber = true;
+    this.input = "";
   }
 
   ngOnInit() {
   }
 
-
-  appendNumber(selectedNumber: string) {
-    if (this.areWeTypingTheFirstNumber === true) {
-      this.leftHandNumber = this.leftHandNumber + selectedNumber;
-    } else {
-      this.rightHandNumber = this.rightHandNumber + selectedNumber;
-    }
-
-    // console.log(this.leftHandNumber);
+  appendValue(uiSelection: string) {
+    this.input += uiSelection;
   }
 
   clear(): void {
-    this.leftHandNumber = "";
+    this.input = "";
   }
 
   clearAll(): void {
-    this.leftHandNumber = "";
-    this.rightHandNumber = "";
+    this.clear();
     this.answer = "";
-
   }
 
   backspace(): void {
-    this.leftHandNumber = this.leftHandNumber.slice(0, -1);
-  }
-
-  add() {
-    this.areWeTypingTheFirstNumber = false;
-  }
-
-  subtract() {
+    this.input = this.input.slice(0, -1);
   }
 
   enter() {
-    let leftHandNumberValue: number = parseInt(this.leftHandNumber);
-    let rightHandNumberValue: number = +this.rightHandNumber;
-    let answer: number = leftHandNumberValue + rightHandNumberValue;
-    this.answer = answer.toString();
-    this.areWeTypingTheFirstNumber = true;
-    this.leftHandNumber = "";
-    this.rightHandNumber = "";
+    let tempAnswer: number = eval(this.input);
+    this.answer = tempAnswer.toString();
+    console.log("debugging");
   }
-
 
 }
