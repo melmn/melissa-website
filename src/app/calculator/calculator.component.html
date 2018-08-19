@@ -1,29 +1,34 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  </style>
+
 <h1>Calculator Project</h1>
-<p>Input: {{input}}</p>
 
 <div class="grid-container">
-  <button class="grid-item" value="7" #seven (click)="appendValue(seven.value)">7</button>
-  <button class="grid-item" value="8" #eight (click)="appendValue(eight.value)">8</button>
-  <button class="grid-item" value="9" #nine (click)="appendValue(nine.value)">9</button>
-  <button class="grid-item" value="4" #ten (click)="appendValue(ten.value)">4</button>
-  <button class="grid-item" value="5" #five (click)="appendValue(five.value)">5</button>
-  <button class="grid-item" value="6" #six (click)="appendValue(six.value)">6</button>
-  <button class="grid-item" value="1" #one (click)="appendValue(one.value)">1</button>
-  <button class="grid-item" value="2" #two (click)="appendValue(two.value)">2</button>
-  <button class="grid-item" value="3" #three (click)="appendValue(three.value)">3</button>
-  <button class="grid-item" value="+" #plus (click)="appendValue(plus.value)">+</button>
-  <button class="grid-item" value="0" #zero (click)="appendValue(zero.value)">0</button>
-  <button class="grid-item" value="-" #minus (click)="appendValue(minus.value)">-</button>
-  <button class="grid-item" (click)="backspace()">Backspace</button>
-  <button class="grid-item" (click)="clear()">Clear</button>
-  <button class="grid-item" (click)="clearAll()">Clear All</button>
-  <button class="grid-item"></button>
-  <button class="grid-item" (click)="enter()">Enter</button>
-  <button class="grid-item"></button>
+<h2><b>Input:</b> {{input}}</h2>
 </div>
 
-
+<div class="grid-container">
+  <button class="grid-item buttonHover buttonClick" value="7" #seven (click)="appendValue(seven.value)">7</button>
+  <button class="grid-item buttonHover buttonClick" value="8" #eight (click)="appendValue(eight.value)">8</button>
+  <button class="grid-item buttonHover buttonClick" value="9" #nine (click)="appendValue(nine.value)">9</button>
+  <button class="grid-item buttonHover buttonClick" value="4" #ten (click)="appendValue(ten.value)">4</button>
+  <button class="grid-item buttonHover buttonClick" value="5" #five (click)="appendValue(five.value)">5</button>
+  <button class="grid-item buttonHover buttonClick" value="6" #six (click)="appendValue(six.value)">6</button>
+  <button class="grid-item buttonHover buttonClick" value="1" #one (click)="appendValue(one.value)">1</button>
+  <button class="grid-item buttonHover buttonClick" value="2" #two (click)="appendValue(two.value)">2</button>
+  <button class="grid-item buttonHover buttonClick" value="3" #three (click)="appendValue(three.value)">3</button>
+  <button class="grid-item buttonHover buttonClick" value="+" #plus (click)="appendValue(plus.value)">Add</button>
+  <button class="grid-item buttonHover buttonClick" value="0" #zero (click)="appendValue(zero.value)">0</button>
+  <button class="grid-item buttonHover buttonClick" value="-" #minus (click)="appendValue(minus.value)">Subtract</button>
+  <button class="grid-item buttonHover buttonClick" value="*" #multiply (click)="appendValue(multiply.value)">Multiply</button>
+  <button class="grid-item buttonHover buttonClick" (click)="clear()">Clear</button>
+  <button class="grid-item buttonHover buttonClick" value="/" #divide (click)="appendValue(divide.value)">Divide</button>
+  <button class="grid-item buttonHover buttonClick" (click)="backspace()">Backspace</button>
+  <button class="grid-item buttonHover buttonClick" (click)="enter()">Enter</button>
+  <button class="grid-item buttonHover buttonClick" (click)="clearAll()">Clear All</button>
+</div>
 
 <div class="grid-container">
-  <p>Answer: {{answer}}</p>
+  <h2><b>Answer:</b> {{answer}}</h2>
 </div>
