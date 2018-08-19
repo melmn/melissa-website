@@ -41,6 +41,6 @@ h2{
 }
 
 .buttonClick:active {
-    background-color: #b2c8dd1;
+    background-color: #b2c8dd;
     transform: translateY(2px);
   }
