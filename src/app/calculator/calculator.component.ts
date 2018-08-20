@@ -6,22 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-  input: string;
+  inputForDisplay: string;
+  inputForActuallyDoingTheMath: string;
   answer: string;
 
   constructor() {
-    this.input = "";
+    this.inputForDisplay = "";
+    this.inputForActuallyDoingTheMath = "";
   }
 
   ngOnInit() {
   }
 
-  appendValue(uiSelection: string) {
-    this.input += uiSelection;
+  appendValue(uiSelection: string): void {
+    this.inputForActuallyDoingTheMath += uiSelection;
+    // this.inputForDisplay += this.replaceSlash(this.replaceAsterisk(uiSelection));
+    this.inputForDisplay += this.replaceMathSymbols(uiSelection);
   }
 
   clear(): void {
-    this.input = "";
+    this.inputForDisplay = "";
+    this.inputForActuallyDoingTheMath = "";
   }
 
   clearAll(): void {
@@ -30,13 +35,33 @@ export class CalculatorComponent implements OnInit {
   }
 
   backspace(): void {
-    this.input = this.input.slice(0, -1);
+    this.inputForActuallyDoingTheMath = this.inputForActuallyDoingTheMath.slice(0, -1);
+    this.inputForDisplay = this.inputForDisplay.slice(0, -1);
   }
 
-  enter() {
-    let tempAnswer: number = eval(this.input);
+  enter(): void {
+    let tempAnswer: number = eval(this.inputForActuallyDoingTheMath);
     this.answer = tempAnswer.toString();
-    console.log("debugging");
+  }
+
+  replaceAsterisk(textWithAnAsterisk: string): string {
+    // let textWithAsteriskReplaced: string;
+    // textWithAsteriskReplaced = textWithAnAsterisk.replace("*", "x");
+    // return textWithAsteriskReplaced;
+    // the three lines above are equal to the line below for future reference
+    return textWithAnAsterisk.replace("*", "x");
+  }
+
+  replaceSlash(textWithASlash: string): string {
+    // let textWithSlashReplaced: string;
+    // textWithSlashReplaced = textWithASlash.replace("/", "÷");
+    // return textWithSlashReplaced;
+    // the three lines above are equal to the line below for future reference
+    return textWithASlash.replace("/", "÷");
+  }
+
+  replaceMathSymbols(inputText: string): string {
+    return inputText.replace("/", "÷").replace("*", "x");
   }
 
 }
