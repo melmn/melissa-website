@@ -1,0 +1,11 @@
+<p>A simple string: {{fruit}}</p>
+<p>Our object's id: {{windstorm.id}}</p>
+<p>Our object's name: {{windstorm.name | uppercase}}</p>
+
+<div>
+    <label>name:
+        <input [(ngModel)]="windstorm.name" placeholder="name">
+    </label>
+</div>
+
+<p>Our hero, {{windstorm.name}}, with ID {{windstorm.id}}, likes the color {{windstorm.favoriteThings.color}}</p>
